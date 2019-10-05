@@ -1,0 +1,20 @@
+.title {
+  background-color: #e7273f;
+  margin: 0;
+  border-top: 5px solid #f8eeda;
+  font-family: 'Poppins', sans-serif;
+  color: #f8eeda ;
+}
+
+.main {
+  width: 100%;
+  margin:0;
+}
+
+app-nav {
+  width: 100%;
+}
+
+router-outlet {
+  width: 100%;
+}

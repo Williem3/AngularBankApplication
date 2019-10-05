@@ -1,26 +1,137 @@
 .balance {
   display: block;
+  background-color: #042345;
+  color: #f8eeda;
+  font-weight: bolder;
+  border-radius: 15px;
+  width: 75%;
+  align-self: center;
 }
 
 .main {
   display: flex;
   flex-flow: row nowrap;
+  background-color: #f8eeda;
+  height: 100%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .display {
-  flex-basis: 50vw;
-  background-color: darkslategrey;
+  flex-basis: 80vw;
+  background-color: #042345;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px;
+  border-radius: 10px;
+}
+
+.display div {
+  align-self: center;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 0;
+  margin: 10px;
 }
 
 .options {
-  flex-basis: 50vw;
+  flex-basis: 20vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
 }
 
 .options-list {
   list-style: none;
+  padding-left: 0;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .options-item {
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
 
+.transactions {
+  list-style: none;
+  padding-left: 0;
+}
+
+.title {
+  border-top: 30px solid #f8eeda;
+  background-color: #e74b33;
+  margin: 0;
+  color: #f8eeda;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* buttons css */
+.options-item button {
+  border: none;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.options button:focus {
+  outline: none;
+}
+.options-item button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.options-item button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.options-item button:hover span {
+  padding-right: 25px;
+}
+.options-item button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.change button {
+  background-color: #077f8d;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+.change button:active {
+  background-color: #042345;
+  transform: translateY(4px);
+}
+.information button {
+  background-color: #042345;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+.information button:active {
+  background-color: #077f8d;
+  transform: translateY(4px);
+}
+input {
+  width: 75%;
+  border-radius: 5px;
+  background-color: #f8eeda;
+  color: black;
+  border: 2px solid #042345;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-weight: bolder;
+  align-self: center;
+}
+input:focus {
+  outline: none;
 }

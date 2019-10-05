@@ -1,24 +1,47 @@
-<h1>ATM View</h1>
+<h1 class="title">ATM View</h1>
 <div class="main">
   <section class="display">
-    > Welcome, Henry!
-    <!-- Display Feedback information here -->
+    <div>
+      Welcome to the Bank of San Diego, {{bankService.account.fname}}!
+      <!-- Display Feedback information here -->
+      <p>Type in the value on the right that you would like to withdraw/deposit and then select the button corresponding
+        to your choice.</p>
+      <p>Current value to be deposited/withdrawn:</p>
+      <br *ngIf="value === ''"/>
+      <p> {{value}} </p>
+
+      <div class="currentBalance">
+        <h3>Current balance: <span class="balanceSmall" *ngIf="balanceRequested">${{ bankService.account.balance }}</span></h3>
+
+      </div>
+      <h3>Transaction history: </h3>
+      <div *ngIf="transactionRequest">
+        <ul class="transactions" *ngFor="let transaction of transactions | slice:-3">
+          <li>[{{transaction.date}} | ${{transaction.amount}} | {{transaction.type}}]</li>
+        </ul>
+      </div>
+
+    </div>
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
+
     <ul class="options-list">
-      <li class="options-item">
-        <button>Make a Widthdrawl</button>
+      <li class="options-item change">
+        <button (click)="withdraw()" [disabled]="!value"><span>Make a Withdrawal</span></button>
       </li>
-      <li class="options-item">
-        <button>Deposit Money</button>
+      <li class="options-item change">
+        <button (click)="deposit()" [disabled]="!value"><span>Deposit Money</span></button>
       </li>
-      <li class="options-item">
-        <button>Balance Inquiry</button>
+      <li class="options-item information">
+        <button (click)="balance()"><span>Balance Inquiry</span></button>
       </li>
-      <li class="options-item">
-        <button>Transactions History</button>
+      <li class="options-item information">
+        <button (click)="transactionAsked()"><span>Transactions History</span></button>
       </li>
     </ul>
+    <label>
+      <input [(ngModel)] = "value" (keypress)="isNumber($event)"/>
+    </label>
   </aside>
 </div>
