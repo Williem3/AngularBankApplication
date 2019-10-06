@@ -7,7 +7,6 @@ import { BankService } from '../bank.service';
   styleUrls: ['./atm.component.css']
 })
 export class AtmComponent {
-
   balanceRequested: boolean;
   transactionRequest: boolean;
 
@@ -24,12 +23,12 @@ export class AtmComponent {
 
   withdraw() {
       this.bankService.withdraw(this.value);
-      console.log(this.bankService.account.balance);
+      return console.log(this.bankService.account.balance);
   }
 
   deposit() {
     this.bankService.deposit(this.value);
-    console.log(this.bankService.account.balance);
+    return console.log(this.bankService.account.balance);
   }
   balance() {
     return this.balanceRequested = true;

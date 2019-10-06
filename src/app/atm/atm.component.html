@@ -1,3 +1,4 @@
+
 <h1 class="title">ATM View</h1>
 <div class="main">
   <section class="display">
@@ -16,7 +17,7 @@
       </div>
       <h3>Transaction history: </h3>
       <div *ngIf="transactionRequest">
-        <ul class="transactions" *ngFor="let transaction of transactions | slice:-3">
+        <ul class="transactions" *ngFor="let transaction of transactions | slice:-2">
           <li>[{{transaction.date}} | ${{transaction.amount}} | {{transaction.type}}]</li>
         </ul>
       </div>

@@ -9,11 +9,13 @@ import {BankService} from '../bank.service';
 export class ContactComponent implements OnInit {
 
   constructor( public bankService: BankService) { }
-  nameValue = this.bankService.account.fname + this.bankService.account.lname;
+  nameValue = this.bankService.account.fname + ' ' + this.bankService.account.lname;
   emailValue = this.bankService.account.email;
   messageValue = '';
-
   ngOnInit() {
   }
 
+  message(name, email, message) {
+    this.bankService.submitMessage(name, email, message);
+  }
 }

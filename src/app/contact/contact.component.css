@@ -1,0 +1,120 @@
+.title {
+  border-top: 30px solid #f8eeda;
+  background-color: #e74b33;
+  margin: 0;
+  color:#f8eeda;
+  font-family: 'Poppins', sans-serif;
+}
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #f8eeda;
+  height: 63%;
+}
+.display {
+  flex-basis: 70vw;
+  background-color: #042345;
+  color: white;
+  width: 75%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 15px 50px 50px 15px;
+  height: 92%;
+  flex-wrap: wrap;
+}
+
+.display div {
+
+}
+
+.display div {
+  align-self: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.options {
+  flex-basis: 30vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.options-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.options-item {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.options button {
+  border: none;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #077f8d;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  width: 75%;
+  justify-self: center;
+}
+.options button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.options button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.options button:hover span {
+  padding-right: 25px;
+}
+.options button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.option button:active {
+  background-color: #042345;
+  transform: translateY(4px);
+}
+
+input {
+  width: 75%;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  background-color: #f8eeda;
+  color: black;
+  border: 2px solid #042345;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-weight: bolder;
+}
+textarea {
+  background-color: #f8eeda;
+  color: black;
+  border-radius: 5px;
+  width: 75%;
+  border: 2px solid #042345;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-weight: bolder;
+  max-width: 75%;
+  flex-wrap: wrap;
+}
+input:focus {
+  outline: none;
+}
+

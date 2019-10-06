@@ -11,6 +11,8 @@ import { NavComponent } from './nav/nav.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { BankService } from './bank.service';
+import { FooterComponent } from './footer/footer.component';
+import { InfoComponent } from './info/info.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { BankService } from './bank.service';
     TellerComponent,
     NavComponent,
     ContactComponent,
+    FooterComponent,
+    InfoComponent,
   ],
   imports: [
     BrowserModule,

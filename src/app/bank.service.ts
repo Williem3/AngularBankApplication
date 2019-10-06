@@ -42,9 +42,24 @@ export class BankService {
         amount: 2.00,
         currency: 'usd'
       }
-    ]
+    ],
+    messages: [
+      {
+        date: '01-01-01',
+        name: 'Willie Mangram',
+        email: 'dev.wmangram@gmail.com',
+        message: 'Bruh theirs noise'
+      }
+    ],
   };
-
+  contactMessage: [
+    {
+      name: 'Willie Mangram'
+      date: '01-01-01',
+      email: 'dev.wmangram@gmail.com',
+      message: 'Bunch of noise.'
+    }
+  ];
   withdraw(value) {
     if (this.account.balance > 0 && (this.account.balance - value) >= 0) {
       this.account.balance = this.account.balance - value;
@@ -60,5 +75,11 @@ export class BankService {
 
     return this.account.balance + console.log(this.account.transactions);
   }
-
+  submitMessage(name, email, message) {
+    if (name || email || message) {
+      this.account.messages.push({date: new Date().getMonth() + '-' + new Date().getDate() + '-' + new Date().getUTCFullYear(),
+      name: name, email: email, message: message});
+    }
+    return console.log(this.account.messages) + this.account.messages;
+  }
 }
