@@ -27,9 +27,9 @@
       </li>
       <li class="options-item">
         <textarea  placeholder="Message" [(ngModel)]="messageValue"></textarea>
+        <span ng-show="!messageValue.length"></span>
       </li>
     </ul>
-
     <div class="messageSubmitBtn">
       <button (click)="message(nameValue, emailValue, messageValue)" [disabled]="!messageValue"><span>Submit!</span>
       </button>

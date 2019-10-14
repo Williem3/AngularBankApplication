@@ -13,6 +13,8 @@ import { ContactComponent } from './contact/contact.component';
 import { BankService } from './bank.service';
 import { FooterComponent } from './footer/footer.component';
 import { InfoComponent } from './info/info.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { InfoComponent } from './info/info.component';
     ContactComponent,
     FooterComponent,
     InfoComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,7 @@ export class ContactComponent implements OnInit {
   }
 
   message(name, email, message) {
-    this.bankService.submitMessage(name, email, message);
+    this.messageValue.match( '^\\s*$') ? alert('Your feedback is missing, please fill it out with relevant information!') :
+      this.bankService.submitMessage(name, email, message);
   }
 }

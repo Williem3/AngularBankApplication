@@ -13,6 +13,8 @@ export class BankService {
     fname: 'Willie',
     lname: 'Mangram',
     email: 'dev.wmangram3@gmail.com',
+    username: 'test',
+    password: 'test',
     age: 24,
     address: {
       street: '206 Park Blvd',
@@ -61,23 +63,26 @@ export class BankService {
     }
   ];
   withdraw(value) {
+    const date = new Date();
     if (this.account.balance > 0 && (this.account.balance - value) >= 0) {
       this.account.balance = this.account.balance - value;
-      this.account.transactions.push({date: new Date().getMonth() + '-' + new Date().getDate() + '-' + new Date().getUTCFullYear(),
+      this.account.transactions.push({date: date.getMonth() + '-' + date.getDate() + '-' + date.getUTCFullYear(),
         type: 'Withdrawal', amount: value, currency: 'usd'});
       return this.account.balance + console.log(this.account.transactions);
     }
   }
   deposit(value) {
+    const date = new Date();
     this.account.balance = (this.account.balance + +value);
-    this.account.transactions.push({date: new Date().getMonth() + '-' + new Date().getDate() + '-' + new Date().getUTCFullYear(),
+    this.account.transactions.push({date: date.getMonth() + '-' + date.getDate() + '-' + date.getUTCFullYear(),
       type: 'Deposit', amount: value, currency: 'usd'});
 
     return this.account.balance + console.log(this.account.transactions);
   }
   submitMessage(name, email, message) {
+    const date = new Date();
     if (name || email || message) {
-      this.account.messages.push({date: new Date().getMonth() + '-' + new Date().getDate() + '-' + new Date().getUTCFullYear(),
+      this.account.messages.push({date: date.getMonth() + '-' + date.getDate() + '-' + date.getUTCFullYear(),
       name: name, email: email, message: message});
     }
     return console.log(this.account.messages) + this.account.messages;
